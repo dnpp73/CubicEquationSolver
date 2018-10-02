@@ -1,0 +1,9 @@
+whitelist_rules:
+  - todo
+  - trailing_newline
+  - leading_whitespace
+  - trailing_whitespace
+included:
+  - CubicEquationSolver
+  - CubicEquationSolverTests
+  - ExampleApp
