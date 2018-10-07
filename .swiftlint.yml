@@ -3,7 +3,71 @@ whitelist_rules:
   - trailing_newline
   - leading_whitespace
   - trailing_whitespace
+  - trailing_semicolon
+  - private_action
+  - private_outlet
+  - redundant_nil_coalescing
+  - single_test_class
+  - class_delegate_protocol
+  - closing_brace
+  - closure_parameter_position
+  - colon
+  - comma
+  - compiler_protocol_init
+  - control_statement
+  - empty_parentheses_with_trailing_closure
+  - force_cast
+  - force_try
+  - force_unwrapping
+  - for_where
+  - generic_type_name
+  - implicit_getter
+  - mark
+  - opening_brace
+  - operator_whitespace
+  - private_unit_test
+  - redundant_discardable_let
+  - redundant_optional_initialization
+  - redundant_string_enum_value
+  - redundant_void_return
+  - return_arrow_whitespace
+  - shorthand_operator
+  - statement_position
+  - type_name
+  - vertical_parameter_alignment
+  - vertical_whitespace
+  - weak_delegate
+  - closure_end_indentation
+  - closure_spacing
+  - conditional_returns_on_newline
+  - explicit_init
+  - first_where
+  - prohibited_super_call
+  - block_based_kvo
+  - fatal_error_message
+  - identifier_name
+  - valid_ibinspectable
+  - attributes
+identifier_name:
+  min_length: 0
+  max_length:
+    warning: 50
+    warning: 60
+  excluded:
+    - id
+    - URL
+type_name:
+  min_length: 4
+  max_length:
+    warning: 50
+    error: 60
+force_cast: error
+force_try:
+  severity: error
 included:
   - CubicEquationSolver
   - CubicEquationSolverTests
   - ExampleApp
+excluded:
+  - Carthage
+  - Pods

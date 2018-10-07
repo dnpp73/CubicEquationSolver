@@ -2,6 +2,8 @@ import Foundation
 
 // real number only
 
+// swiftlint:disable identifier_name
+
 // ax^3 + bx^2 + cx + d = 0
 public func solveCubicEquation(a: Double, b: Double, c: Double, d: Double) -> [Double] {
     if a == 0.0 {
@@ -15,7 +17,7 @@ public func solveCubicEquation(a: Double, b: Double, c: Double, d: Double) -> [D
     }
 }
 
-//MARK:- Private
+// MARK: - Private
 
 // x^3 + Ax^2 + Bx + C = 0
 private func solveCubicEquation(A: Double, B: Double, C: Double) -> [Double] {
