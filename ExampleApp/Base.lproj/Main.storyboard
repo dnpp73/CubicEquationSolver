@@ -49,7 +49,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0n-sb-2sv">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="l9r-8l-pr2"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="l9r-8l-pr2"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,7 +84,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a*x^3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="si2-5m-9Jm">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="tch-P2-V3a"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="tch-P2-V3a"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,7 +119,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="b*x^2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYg-40-zFq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="VqQ-UB-SVz"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="VqQ-UB-SVz"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,7 +154,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="c*x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzT-aN-X57">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="O4Q-iU-a0L"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="O4Q-iU-a0L"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -189,7 +189,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="d" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYz-hD-yMK">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="WYe-vx-CQk"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="WYe-vx-CQk"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
