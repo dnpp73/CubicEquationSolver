@@ -4,10 +4,7 @@ CubicEquationSolver
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
 
 
-## ToDo
-
-- Write Super Cool README.
-- Make Ultra Cool Sample App.
+![ExampleApp](/ExampleApp.gif)
 
 
 ## What is this
