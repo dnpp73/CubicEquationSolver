@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19B7728B21AAD74500EEE4E9 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B7728A21AAD74500EEE4E9 /* GraphView.swift */; };
+		19B7728D21AAD79100EEE4E9 /* CubicPolynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B7728C21AAD79100EEE4E9 /* CubicPolynomial.swift */; };
 		19BD55B22163CF5D0057A8C2 /* CubicEquationSolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BD55B12163CF5D0057A8C2 /* CubicEquationSolverTests.swift */; };
 		19BD55C32163CFCF0057A8C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BD55C22163CFCF0057A8C2 /* AppDelegate.swift */; };
 		19BD55C52163CFCF0057A8C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BD55C42163CFCF0057A8C2 /* ViewController.swift */; };
@@ -53,6 +55,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		19B7728A21AAD74500EEE4E9 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		19B7728C21AAD79100EEE4E9 /* CubicPolynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicPolynomial.swift; sourceTree = "<group>"; };
 		19BD55AD2163CF5D0057A8C2 /* CubicEquationSolverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CubicEquationSolverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19BD55B12163CF5D0057A8C2 /* CubicEquationSolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicEquationSolverTests.swift; sourceTree = "<group>"; };
 		19BD55B32163CF5D0057A8C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				19BD55E92163D2630057A8C2 /* Asset */,
 				19BD55CB2163CFD00057A8C2 /* LaunchScreen.storyboard */,
 				19BD55C62163CFCF0057A8C2 /* Main.storyboard */,
+				19B7728C21AAD79100EEE4E9 /* CubicPolynomial.swift */,
+				19B7728A21AAD74500EEE4E9 /* GraphView.swift */,
 				19BD55C42163CFCF0057A8C2 /* ViewController.swift */,
 				19BD55C22163CFCF0057A8C2 /* AppDelegate.swift */,
 			);
@@ -391,6 +397,8 @@
 			files = (
 				19BD55C52163CFCF0057A8C2 /* ViewController.swift in Sources */,
 				19BD55C32163CFCF0057A8C2 /* AppDelegate.swift in Sources */,
+				19B7728D21AAD79100EEE4E9 /* CubicPolynomial.swift in Sources */,
+				19B7728B21AAD74500EEE4E9 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3XM25R8KKX;
 				INFOPLIST_FILE = ExampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -624,6 +633,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3XM25R8KKX;
 				INFOPLIST_FILE = ExampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
