@@ -4,7 +4,6 @@ final class GraphView: UIView {
 
     var cubicPolynomial = CubicPolynomial(a: 2.0, b: 0.0, c: -2.0, d: 0.0) { didSet { setNeedsDisplay() } }
 
-    // var p: Double = 0.0 { didSet { setNeedsDisplay() } }
     var origin: CGPoint = .zero { didSet { setNeedsDisplay() } }
     var scale: CGFloat = 0.5 { didSet { setNeedsDisplay() } }
     var resolution: Int = 1000 { didSet { setNeedsDisplay() } }
@@ -16,22 +15,22 @@ final class GraphView: UIView {
     var coordinateLineColor: UIColor = .lightGray { didSet { setNeedsDisplay() } }
     var coordinateLineWidth: CGFloat = 1.0 { didSet { setNeedsDisplay() } }
 
-    private func updateOrigin(location: CGPoint) {
-        let x = (location.x / bounds.width - 0.5) * 2.0
-        let y = (1.0 - location.y / bounds.height - 0.5) * 2.0
-        origin = CGPoint(x: x, y: y)
+    fileprivate var doubleTapGestureRecognizer = UITapGestureRecognizer()
+    fileprivate var panGestureRecognizer = UIPanGestureRecognizer()
+    fileprivate var pinchGestureRecognizer = UIPinchGestureRecognizer()
+
+    fileprivate var originPlaceholder: CGPoint = .zero
+    fileprivate var originBegan: CGPoint = .zero
+    fileprivate var scalePlaceholder: CGFloat = 0.5
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupGestureRecognizers()
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let location = touches.first?.location(in: self) {
-            updateOrigin(location: location)
-        }
-    }
-
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let location = touches.first?.location(in: self) {
-            updateOrigin(location: location)
-        }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupGestureRecognizers()
     }
 
     private func transform(for rect: CGRect) -> CGAffineTransform {
@@ -112,6 +111,7 @@ final class GraphView: UIView {
         path.apply(t)
         path.stroke()
 
+        // Red Points for Roots
         for root in cubicPolynomial.roots {
             pointColor.setFill()
             let pointCircle = UIBezierPath(arcCenter: CGPoint(x: root, y: 0.0), radius: pointRadius / scale, startAngle: 0.0, endAngle: 2.0 * CGFloat.pi, clockwise: false)
@@ -121,6 +121,62 @@ final class GraphView: UIView {
             pointCircle.apply(CGAffineTransform(translationX: origin.x, y: origin.y))
             pointCircle.apply(t)
             pointCircle.fill()
+        }
+    }
+
+}
+
+extension GraphView: UIGestureRecognizerDelegate {
+
+    fileprivate func setupGestureRecognizers() {
+        let selector = #selector(GraphView.handleGestureRecognizer(_:))
+
+        doubleTapGestureRecognizer.addTarget(self, action: selector)
+        doubleTapGestureRecognizer.delegate = self
+        doubleTapGestureRecognizer.numberOfTapsRequired = 2
+        addGestureRecognizer(doubleTapGestureRecognizer)
+
+        panGestureRecognizer.addTarget(self, action: selector)
+        panGestureRecognizer.delegate = self
+        addGestureRecognizer(panGestureRecognizer)
+
+        pinchGestureRecognizer.addTarget(self, action: selector)
+        pinchGestureRecognizer.delegate = self
+        addGestureRecognizer(pinchGestureRecognizer)
+    }
+
+    @objc
+    private func handleGestureRecognizer(_ sener: UIGestureRecognizer) {
+        switch sener {
+        case doubleTapGestureRecognizer:
+            origin = .zero
+            scale = 0.5
+        case pinchGestureRecognizer:
+            switch sener.state {
+            case .began:
+                scalePlaceholder = scale
+            case .changed:
+                scale = scalePlaceholder * pinchGestureRecognizer.scale
+            default: break
+            }
+        case panGestureRecognizer:
+            switch sener.state {
+            case .began:
+                originPlaceholder = origin
+                let location = panGestureRecognizer.location(in: self)
+                let x = (location.x / bounds.width - 0.5) * 2.0
+                let y = (1.0 - location.y / bounds.height - 0.5) * 2.0
+                originBegan = CGPoint(x: x, y: y)
+            case .changed:
+                let location = panGestureRecognizer.location(in: self)
+                let x = (location.x / bounds.width - 0.5) * 2.0
+                let y = (1.0 - location.y / bounds.height - 0.5) * 2.0
+                let dx = x - originBegan.x
+                let dy = y - originBegan.y
+                origin = CGPoint(x: originPlaceholder.x + dx, y: originPlaceholder.y + dy)
+            default: break
+            }
+        default: break
         }
     }
 

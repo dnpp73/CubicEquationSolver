@@ -9,8 +9,6 @@ final class ViewController: UIViewController {
 
     @IBOutlet private var graphView: GraphView!
     @IBOutlet private var rootsLabel: UILabel!
-    @IBOutlet private var scaleSlider: UISlider!
-    @IBOutlet private var scaleTextField: UITextField!
     @IBOutlet private var aSlider: UISlider!
     @IBOutlet private var aTextField: UITextField!
     @IBOutlet private var bSlider: UISlider!
@@ -26,18 +24,23 @@ final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        scaleSlider.value = Float(graphView.scale)
-        scaleTextField.text = String(format: "%.2f", graphView.scale)
-
         updateRootsLabel()
         updateControls(for: graphView.cubicPolynomial)
     }
 
     private func updateRootsLabel() {
+        let roots = graphView.cubicPolynomial.roots
+        if roots.count == 0 {
+            rootsLabel.text = "no roots found"
+            return
+        }
         var string = "roots: ["
-        for root in graphView.cubicPolynomial.roots {
-            string += String(format: "%.2f", root)
+        for root in roots.sorted() {
+            if round(root * 10000.0) / 10000.0 == 0.0 {
+                string += "0.0"
+            } else {
+                string += String(format: "%.6f", root)
+            }
             string += ", "
         }
         string.removeLast(2)
@@ -57,60 +60,33 @@ final class ViewController: UIViewController {
     }
 
     @IBAction private func valueChangedAnySlider(_ sender: UISlider) {
-        switch sender {
-        case scaleSlider:
-            let value = round(sender.value, quality: 1000.0)
-            let string = String(format: "%.2f", value)
-            scaleTextField.text = string
-            graphView.scale = value
-        case aSlider, bSlider, cSlider, dSlider:
-            updateControls(for: cubicPolynomialFromSliderValues)
-            graphView.cubicPolynomial = cubicPolynomialFromSliderValues
-            updateRootsLabel()
-        default:
-            break
-        }
+        updateControls(for: cubicPolynomialFromSliderValues)
+        graphView.cubicPolynomial = cubicPolynomialFromSliderValues
+        updateRootsLabel()
     }
 
     @IBAction private func editingDidChangeAnyTextField(_ sender: UITextField) {
+        let slider: UISlider
         switch sender {
-        case scaleTextField:
-            let minValue = scaleSlider.minimumValue
-            let maxValue = scaleSlider.maximumValue
-            let value = min(maxValue, max(minValue, Float(sender.text ?? "0.0") ?? 0.0))
-            scaleSlider.value = value
-            graphView.scale = CGFloat(value)
         case aTextField:
-            let minValue = aSlider.minimumValue
-            let maxValue = aSlider.maximumValue
-            aSlider.value = min(maxValue, max(minValue, Float(sender.text ?? "0.0") ?? 0.0))
-            graphView.cubicPolynomial = cubicPolynomialFromSliderValues
-            updateRootsLabel()
+            slider = aSlider
         case bTextField:
-            let minValue = bSlider.minimumValue
-            let maxValue = bSlider.maximumValue
-            bSlider.value = min(maxValue, max(minValue, Float(sender.text ?? "0.0") ?? 0.0))
-            graphView.cubicPolynomial = cubicPolynomialFromSliderValues
-            updateRootsLabel()
+            slider = bSlider
         case cTextField:
-            let minValue = cSlider.minimumValue
-            let maxValue = cSlider.maximumValue
-            cSlider.value = min(maxValue, max(minValue, Float(sender.text ?? "0.0") ?? 0.0))
-            graphView.cubicPolynomial = cubicPolynomialFromSliderValues
-            updateRootsLabel()
+            slider = cSlider
         case dTextField:
-            let minValue = dSlider.minimumValue
-            let maxValue = dSlider.maximumValue
-            dSlider.value = min(maxValue, max(minValue, Float(sender.text ?? "0.0") ?? 0.0))
-            graphView.cubicPolynomial = cubicPolynomialFromSliderValues
-            updateRootsLabel()
+            slider = dSlider
         default:
-            break
+            return
         }
+        let minValue = slider.minimumValue
+        let maxValue = slider.maximumValue
+        slider.value = min(maxValue, max(minValue, Float(sender.text ?? "0.0") ?? 0.0))
+        graphView.cubicPolynomial = cubicPolynomialFromSliderValues
+        updateRootsLabel()
     }
 
     @IBAction private func editingDidEndAnyTextField(_ sender: UITextField) {
-        scaleTextField.text = String(format: "%.2f", graphView.scale)
         updateControls(for: cubicPolynomialFromSliderValues)
     }
 
