@@ -303,14 +303,16 @@
 				TargetAttributes = {
 					19BD55AC2163CF5D0057A8C2 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1140;
 						TestTargetID = 19BD55BF2163CFCF0057A8C2;
 					};
 					19BD55BF2163CFCF0057A8C2 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1140;
 					};
 					19BD55D82163D0AC0057A8C2 = {
 						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -578,7 +580,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.dnpp.CubicEquationSolverTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExampleApp.app/ExampleApp";
 			};
@@ -599,7 +601,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.dnpp.CubicEquationSolverTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExampleApp.app/ExampleApp";
 			};
@@ -620,7 +622,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.dnpp.CubiceEuationSolver.ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -640,7 +642,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.dnpp.CubiceEuationSolver.ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -668,7 +670,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -697,7 +699,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.dnpp.CubicEquationSolver;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
