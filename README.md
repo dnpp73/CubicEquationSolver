@@ -2,6 +2,7 @@ CubicEquationSolver
 ===========
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
+![bitrise status](https://app.bitrise.io/app/3144cb5fb712fe14/status.svg?token=S1zRdswv1i47m4Y9j9Aq4Q&branch=master)
 
 
 ![ExampleApp](/ExampleApp.gif)
