@@ -14,12 +14,12 @@ let package = Package(
         .target(
             name: "CubicEquationSolver",
             dependencies: [],
-            path: "Sources/CubicEquationSolver/Solver"
+            path: "Sources"
         ),
         .testTarget(
             name: "CubicEquationSolverTests",
             dependencies: ["CubicEquationSolver"],
-            path: "Tests/CubicEquationSolverTests"
+            path: "Tests"
         ),
     ]
 )

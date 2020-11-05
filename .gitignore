@@ -207,5 +207,9 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/osx,xcode,swift,macos,windows,carthage,fastlane,cocoapods,objective-c
 
+# Swift Package Manager
+/.build
+/.swiftpm
+
 vendor
 !.gitkeep
