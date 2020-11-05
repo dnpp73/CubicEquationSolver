@@ -65,8 +65,8 @@ force_cast: error
 force_try:
   severity: error
 included:
-  - CubicEquationSolver
-  - CubicEquationSolverTests
+  - Sources
+  - Tests
   - ExampleApp
 excluded:
   - Carthage
